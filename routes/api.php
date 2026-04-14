@@ -1,12 +1,12 @@
 <?php
 
-use App\Http\Controllers\RedisController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/redis', [RedisController::class, 'index']);
-Route::post('/redis', [RedisController::class, 'store']);
-Route::delete('/redis', [RedisController::class, 'clear']);
+Route::get('/users/{id}', [UserController::class, 'show']);
+Route::post('/users', [UserController::class, 'store']);
+Route::delete('/users', [UserController::class, 'clear']);
